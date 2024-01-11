@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="2.css">
+</head>
+<body>
+    <div class ="container">
+        <h1 style ="color: azure;">Conversion of Temperature into Fahrenheit and Celsius</h1>
+        <form action="" name="Forms">
+            <input type = "number" name="num" id="number" placeholder="00">
+            <div class="cont">
+                <div>
+                    <input type ="radio" name="unit" id="fah" value = "fah">
+                    <label for ="fah">Fahrenheit</label>
+                </div>
+                <div>
+                    <input type="radio" name="unit" id="cel" value = "cel">
+                    <label for="cel">Celsius</label>
+                </div>
+            </div>
+            <button type="button" id="btn">Convert</button>
+            </form>
+        </div>
+        <div class = "result">
+            result 
+        </div>
+        <script>
+            let btn = document.getElementById("btn");
+                btn.addEventListener("click", function () {
+                    let val = Forms.num.value;
+                    let unit = Forms.unit.value;
+                    let result = document.querySelector(".result");
+                    if (val == "") {
+                        result.innerHTML = "Please Enter a number"
+                    }
+                    else if (unit == "cel") {
+                        result.innerHTML = (val - 32) * (5 / 9) + "(°C)";
+
+                    }
+                    else {
+                        result.innerHTML = (val * 9 / 5) + 32 + "F";
+                    }
+                });
+        </script>
+</body>
+</html>
